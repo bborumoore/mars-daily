@@ -18,43 +18,63 @@
     />
     <link rel="shortcut icon" type="favicon" href="assets/images/weatherFavIcon.png"/>
     <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Mars daily</title>
+    <title>Mars Daily</title>
   </head>
 
   <body>
     <!-- Basic Jumbotron/Header thing -->
-    <header>
-      <h1 id="main-header">Mars Weather Dashboard - Today is Mars Date Yes</h1>
-      <h2 id="personal-greeting">Welcome, Person!</h2>
+    <header class="row">
+      
+        <h1 id="main-header" class="col s9">Mars Weather Dashboard - Today is Mars Date Yes</h1>
+        <h2 id="personal-greeting" class="col s3">Welcome, Person!</h2>
+      
     </header>
     
-    <main>
-      <!-- Div containing Navbar title and links -->
-      <div>
-        <h2>
-          Weather History
-        </h2>
-        <nav id="history-navbar">
-          <ul id="history-list">
-            <li><a href="">Link1</a></li>
-            <li><a href="">Link2</a></li>
-            <li><a href="">Link3</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <!-- Div containing paired text and images -->
-      <div>
-        <!-- Image Card -->
-        <div id="image-swapper">
-          <button>left</button>
-          <button>right</button>
-          <div id="image-card">
-            <h3>Weather Information</h3>
-            <img src="" alt="Mars Daily Photo API call">
-          </div>
+    <main class="row">
+      
+    
+      <!-- Div containing Navbar title and links -->    
+        <div class="col s3">
+          <h2>
+            Weather History
+          </h2>
+          <nav id="history-navbar">
+            <ul id="history-list">
+              <li><a href="">Link1</a></li>
+              <li><a href="">Link2</a></li>
+              <li><a href="">Link3</a></li>
+            </ul>
+          </nav>
         </div>
-      </div>
+
+        <!-- Div containing paired text and images -->
+        <div class="col s9 container">
+          <!-- Image Card -->
+          <div id="image-swapper" class="row valign-wrapper container">
+            <div class="carousel carousel-slider center">
+              <div class="carousel-fixed-item center">
+                <a class="btn waves-effect white grey-text darken-text-2">button</a>
+              </div>
+              <div class="carousel-item red white-text" href="#one!">
+                <h2>First Panel</h2>
+                <p class="white-text">This is your first panel</p>
+              </div>
+              <div class="carousel-item amber white-text" href="#two!">
+                <h2>Second Panel</h2>
+                <p class="white-text">This is your second panel</p>
+              </div>
+              <div class="carousel-item green white-text" href="#three!">
+                <h2>Third Panel</h2>
+                <p class="white-text">This is your third panel</p>
+              </div>
+              <div class="carousel-item blue white-text" href="#four!">
+                <h2>Fourth Panel</h2>
+                <p class="white-text">This is your fourth panel</p>
+              </div>
+            </div>
+            </div>
+          
+        </div>
   
     </main>
 
