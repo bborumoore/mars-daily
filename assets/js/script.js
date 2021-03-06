@@ -2,6 +2,7 @@
 var requestUrl = 'https://api.nasa.gov/insight_weather/?api_key=ItYxdjJELvpdQnE7UpY2vTQ0TJYVVVBG7LMfq51h&feedtype=json&ver=1.0';
 let $day = $("#today");
 let $mainHeader = $("#main-header");
+let $marsDates = $("#history-list");
   fetch(requestUrl, {
       method:'GET',
       credentials: 'same-origin',
@@ -21,8 +22,17 @@ let $mainHeader = $("#main-header");
       };
       const marsTemp = mars?.temperature ?? "N/A";
       console.log(marsTemp);*/
-      $day.text(desiredSol);
+      $day.text("Mars Date: Sol " +desiredSol);
       $mainHeader.text("Mars Weather Dashboard - Today is Mars Date: Sol " + desiredSol);
+      for (let i = desiredSol-1; i>desiredSol-4; i--) {
+        if(i == desiredSol-1){
+          $("#yesterday-sol").text(i);
+        } else if (i == desiredSol-2) {
+          $("#two-days-ago").text(i);
+        }else if (i == desiredSol-3){
+          $("#three-days-ago").text(i);
+        }
+      }
       console.log(desiredSol);      
       console.log(JSO[desiredSol]);
       if (JSO[desiredSol].AT) {
