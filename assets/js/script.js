@@ -1,7 +1,7 @@
 // Mars Photo API
 let nasaAPI = 'ItYxdjJELvpdQnE7UpY2vTQ0TJYVVVBG7LMfq51h';
 let todayDate = moment().format('YYYY-MM-DD');
-let photoRequestUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/latest_photos?api_key='+nasaAPI+'&camera=MCZ_RIGHT';
+let photoRequestUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/latest_photos?api_key='+nasaAPI; //+'&camera=MCZ_RIGHT';
 let imageSwapper = $('#image-swapper');
 let hrefVals = ['#one!','#two!','#three!','#four!', '#five!'];
 let navListEl = $('#history-list');
@@ -148,12 +148,22 @@ let $marsDates = $("#history-list");
     console.log(JSO[desiredSol]);
     
     for(i=0; i < hrefVals.length; i++) {
-      let dailyTemp = JSO[desiredSol]?.AT?.av ?? "No Temperature Availible for this day";
-      let dailyPressure = JSO[desiredSol]?.PRE?.av ?? "No Pressure Availible for this day";
-      let dailyWindSpeed = JSO[desiredSol]?.HWS?.av ?? "No Wind Speed Availible for this day";
-      let currentSeason = JSO[desiredSol]?.Season ?? "Current Season Unavailable";
+      let dailyTemp = JSO[desiredSol-i]?.AT?.av ?? "No Temperature Availible for this day";
+      let dailyPressure = JSO[desiredSol-i]?.PRE?.av ?? "No Pressure Availible for this day";
+      let dailyWindSpeed = JSO[desiredSol-i]?.HWS?.av ?? "No Wind Speed Availible for this day";
+      let currentSeason = JSO[desiredSol-i]?.Season ?? "Current Season Unavailable";
 
-      appendInsightData(dailyTemp, dailyPressure, dailyWindSpeed, currentSeason, i);
+      if (dailyTemp != "No Temperature Availible for this day")
+        dailyTemp+= " &#176;C";
+        
+      if (dailyPressure != "No Pressure Availible for this day")
+        dailyPressure+= " Pa";
+
+      if (dailyWindSpeed != "No Wind Speed Availible for this day")
+        dailyWindSpeed+= " mph";  
+
+
+      appendInsightData(desiredSol-i, dailyTemp, dailyPressure, dailyWindSpeed, currentSeason, i);
     }
     
 
@@ -198,11 +208,15 @@ let $marsDates = $("#history-list");
     // }
   });
 
-function appendInsightData(dailyTemp, dailyPressure, dailyWindSpeed, currentSeason, i) {
+function appendInsightData(sol, dailyTemp, dailyPressure, dailyWindSpeed, currentSeason, i) {
+  let headerContainer = document.getElementById('header'+hrefVals[i]);
+  headerContainer.innerText = "Sol: " + sol;
+  
   let pContainer = document.getElementById('p'+hrefVals[i]);
   pContainer.innerText = 'Temperature: ' + dailyTemp
   + '\n\n Pressure: ' + dailyPressure
   + '\n\n Wind Speed: ' + dailyWindSpeed
   + '\n\n Current Season: ' + currentSeason;
   pContainer.setAttribute('class', '');
+
 }
