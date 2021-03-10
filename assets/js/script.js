@@ -5,12 +5,12 @@ let photoRequestUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseveran
 let imageSwapper = $('#image-swapper');
 let hrefVals = ['#one!','#two!','#three!','#four!'];
 let navListEl = $('#history-list');
+let email = "Guest"; 
+let greetingEl = $('#personal-greeting');
 
 
 // Enable carousel using Materialize
-$(document).ready(function(){
-  
-});
+
 
 // console.log(todayDate);
 
@@ -34,6 +34,15 @@ $(document).ready(function(){
 
 // Initialize funciton to load in newest Mars photo and weather
 function init() {
+  let storedEmail = JSON.parse(localStorage.getItem("email"));
+    if(storedEmail !== null) {
+        email = storedEmail;
+        greetingEl[0].innerText = "Welcome, " + email;
+    }
+    
+    
+   
+
   fetchMarsPhoto();
 }
 
@@ -187,3 +196,30 @@ let $marsDates = $("#history-list");
       $day.after('<p> Season on Mars: N/A </p>')
       }
       });
+
+      document.addEventListener('DOMContentLoaded', function() {
+        let elems = document.querySelectorAll('.modal');
+        let instances = M.Modal.init(elems);
+      });
+      
+    
+    
+      let emailFormEl = document.querySelector('#email-form');
+
+      function handleSearchFormSubmit(event) {
+       event.preventDefault();
+
+      let emailInputVal = document.querySelector('#email').value;
+      //let formatInputVal = document.querySelector('#format-input');
+      greetingEl[0].innerText = "Welcome, " + emailInputVal;
+      localStorage.setItem("email", JSON.stringify(emailInputVal));
+     
+     console.log(greetingEl);
+      console.log(greetingEl.innerText);
+      console.log(emailInputVal);
+     //console.log(formatInputVal);
+     $('.modal').modal('close');
+     }
+
+    
+    emailFormEl.addEventListener('submit', handleSearchFormSubmit);
