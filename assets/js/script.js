@@ -5,6 +5,8 @@ let photoRequestUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseveran
 let imageSwapper = $('#image-swapper');
 let hrefVals = ['#one!','#two!','#three!','#four!', '#five!'];
 let navListEl = $('#history-list');
+let email = "Guest"; 
+let greetingEl = $('#personal-greeting');
 
 // Enables carousel funcitonality through Materialize
 $('.carousel').carousel({
@@ -13,9 +15,7 @@ $('.carousel').carousel({
 
 
 // Enable carousel using Materialize
-$(document).ready(function(){
-  
-});
+
 
 // console.log(todayDate);
 
@@ -39,6 +39,15 @@ $(document).ready(function(){
 
 // Initialize funciton to load in newest Mars photo and weather
 function init() {
+  let storedEmail = JSON.parse(localStorage.getItem("email"));
+    if(storedEmail !== null) {
+        email = storedEmail;
+        greetingEl[0].innerText = "Welcome, " + email;
+    }
+    
+    
+   
+
   fetchMarsPhoto();
 }
 
@@ -133,6 +142,9 @@ let $marsDates = $("#history-list");
       // $day.text("Mars Date: Sol " +desiredSol);
       $mainHeader.text("Mars Weather Dashboard - Today is Mars Date: Sol " + desiredSol);
       
+
+      
+      
       // We have gone in a different direction than doing historical links
       // for (let i = desiredSol-1; i>desiredSol-4; i--) {
       //   if(i == desiredSol-1){
@@ -148,18 +160,18 @@ let $marsDates = $("#history-list");
     console.log(JSO[desiredSol]);
     
     for(i=0; i < hrefVals.length; i++) {
-      let dailyTemp = JSO[desiredSol-i]?.AT?.av ?? "No Temperature Availible for this day";
-      let dailyPressure = JSO[desiredSol-i]?.PRE?.av ?? "No Pressure Availible for this day";
-      let dailyWindSpeed = JSO[desiredSol-i]?.HWS?.av ?? "No Wind Speed Availible for this day";
+      let dailyTemp = JSO[desiredSol-i]?.AT?.av ?? "No Temperature Available for this day";
+      let dailyPressure = JSO[desiredSol-i]?.PRE?.av ?? "No Pressure Available for this day";
+      let dailyWindSpeed = JSO[desiredSol-i]?.HWS?.av ?? "No Wind Speed Available for this day";
       let currentSeason = JSO[desiredSol-i]?.Season ?? "Current Season Unavailable";
 
-      if (dailyTemp != "No Temperature Availible for this day")
+      if (dailyTemp != "No Temperature Available for this day")
         dailyTemp+= " &#176;C";
         
-      if (dailyPressure != "No Pressure Availible for this day")
+      if (dailyPressure != "No Pressure Available for this day")
         dailyPressure+= " Pa";
 
-      if (dailyWindSpeed != "No Wind Speed Availible for this day")
+      if (dailyWindSpeed != "No Wind Speed Available for this day")
         dailyWindSpeed+= " mph";  
 
 
@@ -220,3 +232,30 @@ function appendInsightData(sol, dailyTemp, dailyPressure, dailyWindSpeed, curren
   pContainer.setAttribute('class', '');
 
 }
+
+document.addEventListener('DOMContentLoaded', function() {
+  let elems = document.querySelectorAll('.modal');
+  let instances = M.Modal.init(elems);
+});
+
+
+
+let emailFormEl = document.querySelector('#email-form');
+
+function handleSearchFormSubmit(event) {
+ event.preventDefault();
+
+let emailInputVal = document.querySelector('#email').value;
+//let formatInputVal = document.querySelector('#format-input');
+greetingEl[0].innerText = "Welcome, " + emailInputVal;
+localStorage.setItem("email", JSON.stringify(emailInputVal));
+
+console.log(greetingEl);
+console.log(greetingEl.innerText);
+console.log(emailInputVal);
+//console.log(formatInputVal);
+$('.modal').modal('close');
+}
+
+
+emailFormEl.addEventListener('submit', handleSearchFormSubmit);
