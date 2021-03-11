@@ -12,10 +12,8 @@
       integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
       crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
-      rel="stylesheet"
-    />
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Space+Grotesk&&display=swap" rel="stylesheet">
     <link rel="shortcut icon" type="favicon" href=""/>
     <link rel="stylesheet" href="assets/css/style.css" />
     <title>Mars Daily</title>
@@ -23,85 +21,67 @@
 
   <body>
     <!-- Basic Jumbotron/Header thing -->
-    <header class="row">
-      
-        <h1 id="main-header" class="col s9"></h1>
-        <h2 id="personal-greeting" class="col s3">Welcome, Person!</h2>
-      
+    <header>
+      <h1 id="main-header">Mars Weather Dashboard</h1>
+      <h2 id="personal-greeting">Welcome, Person! <a id="sign-up-btn" class="waves-effect waves-light btn-large modal-trigger" href="#modal1">Sign Up</a></h2>
+      <h2 id="mars-date"></h2>
     </header>
     
     <main class="row">
-      
-      <!-- Removed NavBar as it was deemed unneccessary due to the scope of this application -->
-      <!-- Div containing Navbar title and links    
-        <div class="col s3">
-          <h2>
-            Weather History
-          </h2>
-          <nav id="history-navbar">
-            <ul id="history-list">
-              
-            </ul>
-          </nav>
-        </div> -->
+      <!-- Div containing paired text and images -->
+      <div class="col offset-s3 s9 container">
+        <!-- Image Card -->
+        <div class="row valign-wrapper container">
+          <div class="carousel carousel-slider center" id="image-swapper" >
 
-        <!-- Div containing paired text and images -->
-        <div class="col offset-s3 s9 container">
-          <!-- Image Card -->
-          <div class="row valign-wrapper container">
-            <div class="carousel carousel-slider center" id="image-swapper" >
+              <div class="carousel-item deep-orange darken-4 white-text" href="#one!" id="#one!">
+                <h2 id="header#one!">First Panel</h2>
+                <p id="p#one!" class="white-text">This is your first panel</p>
+              </div>
+              <div class="carousel-item deep-orange accent-4 white-text" href="#two!" id="#two!">
+                <h2 id="header#two!">Second Panel</h2>
+                <p id="p#two!" class="white-text">This is your second panel</p>
+              </div>
+              <div class="carousel-item deep-orange darken-3 white-text" href="#three!" id="#three!">
+                <h2 id="header#three!">Third Panel</h2>
+                <p id="p#three!" class="white-text">This is your third panel</p>
+              </div>
+              <div class="carousel-item deep-orange darken-2 white-text" href="#four!" id="#four!">
+                <h2 id="header#four!">Fourth Panel</h2>
+                <p id="p#four!" class="white-text">This is your fourth panel</p>
+              </div>
+              <div class="carousel-item deep-orange white-text" href="#five!" id="#five!">
+                <h2 id="header#five!">Fifth Panel</h2>
+                <p id="p#five!" class="white-text">This is your fifth panel</p>
+              </div>
+            
+          </div>
+        </div>          
+      </div>
 
-                <div class="carousel-item red white-text" href="#one!" id="#one!">
-                  <h2 id="header#one!">First Panel</h2>
-                  <p id="p#one!" class="white-text">This is your first panel</p>
-                </div>
-                <div class="carousel-item amber white-text" href="#two!" id="#two!">
-                  <h2 id="header#two!">Second Panel</h2>
-                  <p id="p#two!" class="white-text">This is your second panel</p>
-                </div>
-                <div class="carousel-item green white-text" href="#three!" id="#three!">
-                  <h2 id="header#three!">Third Panel</h2>
-                  <p id="p#three!" class="white-text">This is your third panel</p>
-                </div>
-                <div class="carousel-item blue white-text" href="#four!" id="#four!">
-                  <h2 id="header#four!">Fourth Panel</h2>
-                  <p id="p#four!" class="white-text">This is your fourth panel</p>
-                </div>
-                <div class="carousel-item purple white-text" href="#five!" id="#five!">
-                  <h2 id="header#five!">Fifth Panel</h2>
-                  <p id="p#five!" class="white-text">This is your fifth panel</p>
-                </div>
-              
-            </div>
-          </div>          
+      <!-- Modal Structure -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <h4>Keep Yourself Updated!</h4>
+          <p>Enter Your Email For Updates!</p>
+          <form id="email-form">
+            <label for="email">Email:</label>
+            <input type="text" id="email" name="email"><br><br>
+            <input type="submit" value="Submit">
+          </form>
         </div>
-  
-        <a class="waves-effect waves-light btn modal-trigger" href="#modal1">Sign Up</a>
-
-  <!-- Modal Structure -->
-  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <h4>Keep Yourself Updated!</h4>
-      <p>Enter Your Email For Updates!</p>
-      <form id="email-form">
-        <label for="email">Email:</label>
-        <input type="text" id="email" name="email"><br><br>
-        <input type="submit" value="Submit">
-      </form>
-    </div>
-    <div class="modal-footer">
-      <a href="#!" class="modal-close waves-effect waves-green btn-flat">No Thanks!</a>
-    </div>
-  </div>  
+        <div class="modal-footer">
+          <a href="#!" class="modal-close waves-effect waves-green btn-flat">No Thanks!</a>
+        </div>
+      </div>  
 
     </main>
 
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-   <!-- Compiled and minified JavaScript for Materialize -->
-   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="assets/js/script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
+    <!-- Compiled and minified JavaScript for Materialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="assets/js/script.js"></script>
   </body>
 </html>
