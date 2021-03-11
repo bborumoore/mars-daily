@@ -1,3 +1,25 @@
 .carousel {
-    height: 600px;
+    height: 800px;
+}
+
+header {
+    font-family: 'Orbitron', sans-serif;
+}
+
+body {
+    background-color: #f8eede;
+    font-family: 'Space Grotesk', sans-serif; 
+}
+
+#main-header { 
+    font-size: 40px;
+    text-align: center;
+    background-color: #ee5242;
+    color: #F4E6CD;
+    padding: 30px 0px;
+}
+
+header h2 {
+    font-size: 30px;
+    text-align: center;
 }
