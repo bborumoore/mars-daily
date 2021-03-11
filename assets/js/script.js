@@ -3,7 +3,7 @@ let nasaAPI = 'ItYxdjJELvpdQnE7UpY2vTQ0TJYVVVBG7LMfq51h';
 let todayDate = moment().format('YYYY-MM-DD');
 let photoRequestUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/latest_photos?api_key='+nasaAPI; //+'&camera=MCZ_RIGHT';
 let imageSwapper = $('#image-swapper');
-let hrefVals = ['#one!','#two!','#three!','#four!', '#five!'];
+let hrefVals = ['#one!','#two!','#three!','#four!','#five!'];
 let navListEl = $('#history-list');
 let email = "Guest"; 
 let greetingEl = $('#personal-greeting');
@@ -257,5 +257,8 @@ console.log(emailInputVal);
 $('.modal').modal('close');
 }
 
+//Random Photos jQuery
 
-emailFormEl.addEventListener('submit', handleSearchFormSubmit);
+$(document).ready(function(){
+  $('.materialboxed').materialbox();
+});
