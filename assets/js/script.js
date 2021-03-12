@@ -8,6 +8,7 @@ let navListEl = $('#history-list');
 let email = "Guest";
 let greetingEl = $('#personal-greeting');
 let carouselConts = $('.carousel');
+let wrapperContainer = $('#wrapper-container');
 
 // Enables carousel funcitonality through Materialize
 $('.carousel').carousel({
@@ -58,6 +59,10 @@ function init() {
   if (storedEmail !== null) {
     email = storedEmail;
     greetingEl[0].innerText = "Welcome, " + email;
+  }
+  console.log(screen.width);
+  if (screen.width > 600) {
+    wrapperContainer[0].setAttribute('class', 'valign-wrapper');
   }
   
   
