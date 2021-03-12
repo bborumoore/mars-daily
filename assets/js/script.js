@@ -1,16 +1,17 @@
 // Mars Photo API
 let nasaAPI = 'ItYxdjJELvpdQnE7UpY2vTQ0TJYVVVBG7LMfq51h';
 let todayDate = moment().format('YYYY-MM-DD');
-let photoRequestUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/latest_photos?api_key='+nasaAPI; //+'&camera=MCZ_RIGHT';
+let photoRequestUrl = 'https://api.nasa.gov/mars-photos/api/v1/rovers/Perseverance/latest_photos?api_key=' + nasaAPI + '&camera=navcam_right';
 let imageSwapper = $('#image-swapper');
-let hrefVals = ['#one!','#two!','#three!','#four!','#five!'];
+let hrefVals = ['#one!', '#two!', '#three!', '#four!', '#five!'];
 let navListEl = $('#history-list');
-let email = "Guest"; 
+let email = "Guest";
 let greetingEl = $('#personal-greeting');
 
 // Enables carousel funcitonality through Materialize
 $('.carousel').carousel({
-  indicators: true
+  indicators: true,
+  fullWidth: true
 });
 
 // Setting keyup event listner
@@ -53,44 +54,44 @@ document.addEventListener("keyup", function (event) {
 // Initialize funciton to load in newest Mars photo and weather
 function init() {
   let storedEmail = JSON.parse(localStorage.getItem("email"));
-  if(storedEmail !== null) {
-      email = storedEmail;
-      greetingEl[0].innerText = "Welcome, " + email;
+  if (storedEmail !== null) {
+    email = storedEmail;
+    greetingEl[0].innerText = "Welcome, " + email;
   }
-
+  fetchMarsWeather();
   fetchMarsPhoto();
 }
 
 function fetchMarsPhoto() {
 
   fetch(photoRequestUrl, {
-    method:'GET',
+    method: 'GET',
     credentials: 'same-origin',
     redirect: "follow",
   })
-  .then(function (response) {
+    .then(function (response) {
       return response.json();
-  })
-  .then(function (data) {
-    console.log('PHOTO API', data);
-    // console.log(data.latest_photos);
-    // console.log(data.latest_photos[0]);
-    // console.log(data.latest_photos.length);
-    // console.log(data.latest_photos[0].img_src);
-    // console.log(data.latest_photos[0].id);
-    
-    
-    for(i=0; i < hrefVals.length; i++) {
-      let imageSrc = data.latest_photos[i].img_src;
-      let imageID = data.latest_photos[i].id;
-      let earthDate = data.latest_photos[i].earth_date;
-      generateCarouselItem(imageSrc, imageID, earthDate, i);
-    }
-  });
+    })
+    .then(function (data) {
+      console.log('PHOTO API', data);
+      // console.log(data.latest_photos);
+      // console.log(data.latest_photos[0]);
+      // console.log(data.latest_photos.length);
+      // console.log(data.latest_photos[0].img_src);
+      // console.log(data.latest_photos[0].id);
+
+
+      for (i = 0; i < hrefVals.length; i++) {
+        let imageSrc = data.latest_photos[i].img_src;
+        let imageID = data.latest_photos[i].id;
+        let earthDate = data.latest_photos[i].earth_date;
+        generateCarouselItem(imageSrc, imageID, earthDate, i);
+      }
+    });
 }
 
 function generateCarouselItem(imgSrc, imgID, earthDate, num) {
-  
+
   // We decided not to generate links at this time - we couldn't get them to propely link with the correct slide
   // Generate navlink element tied to this carousel item
   // let li = document.createElement('li');
@@ -117,66 +118,68 @@ function generateCarouselItem(imgSrc, imgID, earthDate, num) {
   img.setAttribute('src', imgSrc);
   img.setAttribute('alt', 'A Recent Photo of Mars');
   img.setAttribute('id', imgID);
-  imageEl.append(img);        
-}  
+  imageEl.append(img);
+}
 
-init();
+
 
 // InSight Weather API Call
-let requestUrl = 'https://api.nasa.gov/insight_weather/?api_key=ItYxdjJELvpdQnE7UpY2vTQ0TJYVVVBG7LMfq51h&feedtype=json&ver=1.0';
-let $dateHeader = $("#mars-date");
-let $marsDates = $("#history-list");
-fetch(requestUrl, {
-    method:'GET',
+function fetchMarsWeather() {
+  let requestUrl = 'https://api.nasa.gov/insight_weather/?api_key=ItYxdjJELvpdQnE7UpY2vTQ0TJYVVVBG7LMfq51h&feedtype=json&ver=1.0';
+  let $dateHeader = $("#mars-date");
+  let $marsDates = $("#history-list");
+  fetch(requestUrl, {
+    method: 'GET',
     credentials: 'same-origin',
     redirect: "follow",
-})
-.then(function (response) {
+  })
+    .then(function (response) {
       return response.json();
-})
-.then(function (data) {
-  console.log(data);
-  let JSO = data;
-  let desiredSolNum = JSO.sol_keys.length-1;
-  let desiredSol = JSO.sol_keys[desiredSolNum];
+    })
+    .then(function (data) {
+      console.log(data);
+      let JSO = data;
+      let desiredSolNum = JSO.sol_keys.length - 1;
+      let desiredSol = JSO.sol_keys[desiredSolNum];
 
-  $dateHeader.text("Today is Mars Date: Sol " + desiredSol); 
+      $dateHeader.text("Today is Insight Mission Date: Sol " + desiredSol);
 
-  console.log(desiredSol);      
-  console.log(JSO[desiredSol]);
-  
-  for(i=0; i < hrefVals.length; i++) {
-    let dailyTemp = JSO[desiredSol-i]?.AT?.av ?? "No Temperature Available for this day";
-    let dailyPressure = JSO[desiredSol-i]?.PRE?.av ?? "No Pressure Available for this day";
-    let dailyWindSpeed = JSO[desiredSol-i]?.HWS?.av ?? "No Wind Speed Available for this day";
-    let currentSeason = JSO[desiredSol-i]?.Season ?? "Current Season Unavailable";
+      console.log(desiredSol);
+      console.log(JSO[desiredSol]);
 
-    if (dailyTemp != "No Temperature Available for this day")
-      dailyTemp+= " &#176;C";
-      
-    if (dailyPressure != "No Pressure Available for this day")
-      dailyPressure+= " Pa";
+      for (i = 0; i < hrefVals.length; i++) {
+        let dailyTemp = JSO[desiredSol - i]?.AT?.av ?? "No Temperature Available for this day";
+        let dailyPressure = JSO[desiredSol - i]?.PRE?.av ?? "No Pressure Available for this day";
+        let dailyWindSpeed = JSO[desiredSol - i]?.HWS?.av ?? "No Wind Speed Available for this day";
+        let currentSeason = JSO[desiredSol - i]?.Season ?? "Current Season Unavailable";
 
-    if (dailyWindSpeed != "No Wind Speed Available for this day")
-      dailyWindSpeed+= " mph";
+        if (dailyTemp != "No Temperature Available for this day")
+          dailyTemp += " &#176;C";
 
-    appendInsightData(desiredSol-i, dailyTemp, dailyPressure, dailyWindSpeed, currentSeason, i);
-  }
-});
+        if (dailyPressure != "No Pressure Available for this day")
+          dailyPressure += " Pa";
+
+        if (dailyWindSpeed != "No Wind Speed Available for this day")
+          dailyWindSpeed += " mph";
+
+        appendInsightData(desiredSol - i, dailyTemp, dailyPressure, dailyWindSpeed, currentSeason, i);
+      }
+    });
+}
 
 function appendInsightData(sol, dailyTemp, dailyPressure, dailyWindSpeed, currentSeason, i) {
-  let headerContainer = document.getElementById('header'+hrefVals[i]);
+  let headerContainer = document.getElementById('header' + hrefVals[i]);
   headerContainer.innerText = "Sol: " + sol;
-  
-  let pContainer = document.getElementById('p'+hrefVals[i]);
+
+  let pContainer = document.getElementById('p' + hrefVals[i]);
   pContainer.innerText = 'Temperature: ' + dailyTemp
-  + '\n\n Pressure: ' + dailyPressure
-  + '\n\n Wind Speed: ' + dailyWindSpeed
-  + '\n\n Current Season: ' + currentSeason;
+    + '\n\n Pressure: ' + dailyPressure
+    + '\n\n Wind Speed: ' + dailyWindSpeed
+    + '\n\n Current Season: ' + currentSeason;
   pContainer.setAttribute('class', '');
 }
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   let elems = document.querySelectorAll('.modal');
   let instances = M.Modal.init(elems);
 });
@@ -200,8 +203,9 @@ function handleSearchFormSubmit(event) {
 
 //Random Photos jQuery
 
-$(document).ready(function(){
+$(document).ready(function () {
   $('.materialboxed').materialbox();
 });
 
 emailFormEl.addEventListener('submit', handleSearchFormSubmit);
+init();
