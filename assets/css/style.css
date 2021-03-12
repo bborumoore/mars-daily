@@ -14,7 +14,6 @@ body {
 
 footer {
     color: white;
-    height: 800px;
 }
 
 header {
@@ -32,4 +31,8 @@ header {
 header h2 {
     font-size: 30px;
     text-align: center;
+}
+
+.text-shadow {
+    text-shadow: -1px -1px 0 #000, 1px -1px 0 #000, -1px 1px 0 #000, 1px 1px 0 #000;
 }
