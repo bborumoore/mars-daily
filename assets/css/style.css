@@ -1,5 +1,6 @@
 .carousel {
-    height: 600px;
+    height: 40vh;
+    min-height: 400px;
 }
 
 body {
@@ -40,3 +41,4 @@ header h2 {
 .no-padding {
     padding: 0%;
 }
+

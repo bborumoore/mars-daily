@@ -7,6 +7,7 @@ let hrefVals = ['#one!', '#two!', '#three!', '#four!', '#five!'];
 let navListEl = $('#history-list');
 let email = "Guest";
 let greetingEl = $('#personal-greeting');
+let carouselConts = $('.carousel');
 
 // Enables carousel funcitonality through Materialize
 $('.carousel').carousel({
@@ -58,8 +59,11 @@ function init() {
     email = storedEmail;
     greetingEl[0].innerText = "Welcome, " + email;
   }
+  
+  
   fetchMarsWeather();
   fetchMarsPhoto();
+ 
 }
 
 function fetchMarsPhoto() {
@@ -173,9 +177,9 @@ function appendInsightData(sol, dailyTemp, dailyPressure, dailyWindSpeed, curren
 
   let pContainer = document.getElementById('p' + hrefVals[i]);
   pContainer.innerText = 'Temperature: ' + dailyTemp
-    + '\n\n Pressure: ' + dailyPressure
-    + '\n\n Wind Speed: ' + dailyWindSpeed
-    + '\n\n Current Season: ' + currentSeason;
+    + '\n Pressure: ' + dailyPressure
+    + '\n Wind Speed: ' + dailyWindSpeed
+    + '\n Current Season: ' + currentSeason;
   pContainer.setAttribute('class', '');
 }
 
