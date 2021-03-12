@@ -1,5 +1,5 @@
 # Project-1-Mars-Daily
-![Dashboard Image](assets\images\screenshot.png)
+![Dashboard Image](assets\images\largeLayoutMars.png)
 > [Project One Mars Daily](https://bborumoore.github.io/mars-daily/ )
 ---
 ### Table of Contents
@@ -8,7 +8,7 @@
 - [Technologies](#technologies)
 - [Author Info](#author-info)
 - [Credits](#credits)
-- [License](#license)
+- [License](#license)  
 [Back to Top](#Project-1-Mars-Daily)
 ---
 ## Description
@@ -24,7 +24,7 @@ This is a collaborative Project regarding Mars Daily Weather. The website will a
 - VS Code
 - GitHub
 - GitBash
-- Google Fonts
+- Google Fonts  
 [Back to Top](#Project-1-Mars-Daily)
 ---
 ## How to Use
@@ -34,14 +34,14 @@ This is a collaborative Project regarding Mars Daily Weather. The website will a
 - you can interact with the site in two ways.
     1) You can drag your house from pic to pic so view all daily pictures of Mars, and additional pictures and information.
     2) You can use your arrow keys as "Left" and "Right" button to scroll through the pictures
-- In the "Random" section you can click on the pictures, with your mouse, to enlarge the pictures for a better view. When finished, simply click on the picture again to minimize the picture, to scroll to the next pic.
+- In the "Random" section you can click on the pictures, with your mouse, to enlarge the pictures for a better view. When finished, simply click on the picture again to minimize the picture, to scroll to the next pic.  
 [Back to Top](#Project-1-Mars-Daily)
 ---
 ## Author Info
 - Brian Moore - [https://github.com/bborumoore](https://ca.slack-edge.com/T01J4FQGGA2-U01JG5DPJF4-ac50be6c54cc-512)
 - Claire Phillips - [https://github.com/ClairePhillips51](https://ca.slack-edge.com/T01J4FQGGA2-U01JN5VAM1A-adbaa1d0c604-512)
 - Jamie Rippee - [https://github.com/jamtrip7](https://ca.slack-edge.com/T01J4FQGGA2-U01KM5DLZH6-1546fc156004-512)
-- Thomas Lockwood - [https://github.com/lockwoodtommy01](https://ca.slack-edge.com/T01J4FQGGA2-U01JRM9G6R2-4e58b74a9269-512)
+- Thomas Lockwood - [https://github.com/lockwoodtommy01](https://ca.slack-edge.com/T01J4FQGGA2-U01JRM9G6R2-4e58b74a9269-512)  
 [Back to Top](#Project-1-Mars-Daily)
 ---
 ## Credits
