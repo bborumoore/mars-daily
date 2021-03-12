@@ -1,87 +1,190 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <!-- Compiled and minified CSS for Materialize-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
-      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
-      crossorigin="anonymous"
-    />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Space+Grotesk&&display=swap" rel="stylesheet">
-    <link rel="shortcut icon" type="favicon" href=""/>
-    <link rel="stylesheet" href="assets/css/style.css" />
-    <title>Mars Daily</title>
-  </head>
 
-  <body>
-    <!-- Basic Jumbotron/Header thing -->
-    <header>
-      <h1 id="main-header">Mars Weather Dashboard</h1>
-      <h2 id="personal-greeting">Welcome, Person! <a id="sign-up-btn" class="waves-effect waves-light btn-large modal-trigger" href="#modal1">Sign Up</a></h2>
-      <h2 id="mars-date"></h2>
-    </header>
-    
-    <main class="row">
-      <!-- Div containing paired text and images -->
-      <div class="col offset-s3 s9 container">
-        <!-- Image Card -->
-        <div class="row valign-wrapper container">
-          <div class="carousel carousel-slider center" id="image-swapper" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <!-- Compiled and minified CSS for Materialize-->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link href="assets\images\Mars-At-Night.jpg" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron&family=Space+Grotesk&&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" type="favicon" href="" />
+  <link rel="stylesheet" href="assets/css/style.css" />
+  <title>Mars Daily</title>
+</head>
 
-              <div class="carousel-item deep-orange darken-4 white-text" href="#one!" id="#one!">
-                <h2 id="header#one!">First Panel</h2>
-                <p id="p#one!" class="white-text">This is your first panel</p>
+<body>
+  <!-- Basic Jumbotron/Header thing -->
+  <header>
+    <h1 id="main-header">Mars Weather Dashboard</h1>
+    <h2 id="personal-greeting">Welcome, Person! <a id="sign-up-btn"
+        class="waves-effect waves-light btn-large modal-trigger" href="#modal1">Sign Up</a></h2>
+    <h2 id="mars-date"></h2>
+  </header>
+
+  <main class="row">
+    <!-- Div containing paired text and images -->
+    <div class="col offset-s3 s9 container">
+      <!-- Image Card -->
+      <div class="row valign-wrapper container">
+        <div class="carousel carousel-slider center" id="image-swapper">
+
+          <!-- Div containing paired text and images -->
+          <div class="col offset-s3 s9 container">
+            <!-- Image Card -->
+            <div class="row valign-wrapper container">
+              <div class="carousel carousel-slider center" id="image-swapper">
+                <div class="carousel-item deep-orange darken-4 white-text" href="#one!" id="#one!">
+                  <h2 id="header#one!">First Panel</h2>
+                  <p id="p#one!" class="white-text">This is your first panel</p>
+                </div>
+                <div class="carousel-item deep-orange accent-4 white-text" href="#two!" id="#two!">
+                  <h2 id="header#two!">Second Panel</h2>
+                  <p id="p#two!" class="white-text">This is your second panel</p>
+                </div>
+                <div class="carousel-item deep-orange darken-3 white-text" href="#three!" id="#three!">
+                  <h2 id="header#three!">Third Panel</h2>
+                  <p id="p#three!" class="white-text">This is your third panel</p>
+                </div>
+                <div class="carousel-item deep-orange darken-2 white-text" href="#four!" id="#four!">
+                  <h2 id="header#four!">Fourth Panel</h2>
+                  <p id="p#four!" class="white-text">This is your fourth panel</p>
+                </div>
+                <div class="carousel-item deep-orange white-text" href="#five!" id="#five!">
+                  <h2 id="header#five!">Fifth Panel</h2>
+                  <p id="p#five!" class="white-text">This is your fifth panel</p>
+                </div>
+
               </div>
-              <div class="carousel-item deep-orange accent-4 white-text" href="#two!" id="#two!">
-                <h2 id="header#two!">Second Panel</h2>
-                <p id="p#two!" class="white-text">This is your second panel</p>
-              </div>
-              <div class="carousel-item deep-orange darken-3 white-text" href="#three!" id="#three!">
-                <h2 id="header#three!">Third Panel</h2>
-                <p id="p#three!" class="white-text">This is your third panel</p>
-              </div>
-              <div class="carousel-item deep-orange darken-2 white-text" href="#four!" id="#four!">
-                <h2 id="header#four!">Fourth Panel</h2>
-                <p id="p#four!" class="white-text">This is your fourth panel</p>
-              </div>
-              <div class="carousel-item deep-orange white-text" href="#five!" id="#five!">
-                <h2 id="header#five!">Fifth Panel</h2>
-                <p id="p#five!" class="white-text">This is your fifth panel</p>
-              </div>
-            
+            </div>
           </div>
-        </div>          
-      </div>
 
-      <!-- Modal Structure -->
-      <div id="modal1" class="modal">
-        <div class="modal-content">
-          <h4>Keep Yourself Updated!</h4>
-          <p>Enter Your Email For Updates!</p>
-          <form id="email-form">
-            <label for="email">Email:</label>
-            <input type="text" id="email" name="email"><br><br>
-            <input type="submit" value="Submit">
-          </form>
+          <!-- Div containing Random Photos with Info -->
+          <div class="row valign-wrapper container">
+            <div class="carousel carousel-slider center" id="image-swapper">
+              <div class="carousel-item red white-text" href="j#one!" id="j#one!">
+                <h2 id="jheader#one!">Mars Pics and Info</h2>
+                <p id="jp#one!" class="white-text">Mars Rover Prototype</p>
+                <img class="materialboxed" width="650" src="assets\images\NASA-Mars-Rover-Protoype.jpg">
+              </div>
+              <div class="carousel-item amber white-text" href="j#two!" id="j#two!">
+                <h2 id="jheader#two!">Mars Pics and Info</h2>
+                <p id="jp#two!" class="white-text">Mars Rover Prototype</p>
+                <img class="materialboxed" width="650" src="assets\images\NASA-Mars-Rover-Protoype-2.jpg">
+              </div>
+              <div class="carousel-item green white-text" href="j#three!" id="j#three!">
+                <h2 id="jheader#three!">Mars Pics and Info</h2>
+                <p id="jp#three!" class="white-text">Future Journey to Mars</p>
+                <img class="materialboxed" width="650" src="assets\images\journey_to_mars.jpeg">
+              </div>
+              <div class="carousel-item blue white-text" href="j#four!" id="j#four!">
+                <h2 id="jheader#four!">Mars Pics and Info</h2>
+                <p id="jp#four!" class="white-text">Inflatable Habitat Protoype for Space - Moon/Mars Missions</p>
+                <img class="materialboxed" width="650" src="assets\images\INFLATABLE-HABITAT-MARS.webp">
+              </div>
+              <div class="carousel-item purple white-text" href="j#five!" id="j#five!">
+                <h2 id="jheader#five!">Mars Pics and Info</h2>
+                <p id="jp#five!" class="white-text">Perserverance - From lift-off on Earth, to Landing on Mars</p>
+                <img class="materialboxed" width="650" src="assets\images\Perserverance-Earth-To-Mars.jpg">
+              </div>
+              <div class="carousel-item red white-text" href="j#six!" id="j#six!">
+                <h2 id="jheader#six!">Mars Pics and Info</h2>
+                <p id="jp#six!" class="white-text">Perserverance Mars entry and landing. Sol Day 1. February/18th/2021
+                </p>
+                <img class="materialboxed" width="650" src="assets\images\Perserverance-Landing-On-Mars.jpg">
+              </div>
+              <div class="carousel-item amber white-text" href="j#seven!" id="j#seven!">
+                <h2 id="jheader#seven!">Mars Pics and Info</h2>
+                <p id="jp#seven!" class="white-text">Perserverance size compared to humans</p>
+                <img class="materialboxed" width="650" src="assets\images\Perserverance-Helicopter-Man.webp">
+              </div>
+              <div class="carousel-item green white-text" href="j#eight!" id="j#eight!">
+                <h2 id="jheader#eight!">Mars Pics and Info</h2>
+                <p id="jp#eight!" class="white-text">Perserverance Mars Examination and Sample Instrument Functionality
+                  Breakdown</p>
+                <img class="materialboxed" width="650"
+                  src="assets\images\Perseverance-Mars-Rover-Instrument-Labels.jpg">
+              </div>
+              <div class="carousel-item blue white-text" href="j#nine!" id="j#nine!">
+                <h2 id="jheader#nine!">Mars Pics and Info</h2>
+                <p id="jp#nine!" class="white-text">Perserverance Mars Examination and Sample Instrument Functionality
+                  Breakdown</p>
+                <img class="materialboxed" width="650" src="assets\images\Perserverance-Rover-Instruments.jpg">
+              </div>
+              <div class="carousel-item purple white-text" href="j#ten!" id="j#ten!">
+                <h2 id="jheader#ten!">Mars Pics and Info</h2>
+                <p id="jp#ten!" class="white-text">Ingenuity Mars Helicopter Examination and Sample Instrument
+                  Functionality Breakdown</p>
+                <img class="materialboxed" width="650" src="assets\images\Ingenuity-Parts-Descriptions.jpg">
+              </div>
+              <div class="carousel-item red white-text" href="j#eleven!" id="j#eleven!">
+                <h2 id="jheader#eleven!">Mars Pics and Info</h2>
+                <p id="jp#eleven!" class="white-text">Ingenuity Mars Helicopter Examination and Sample Instrument
+                  Functionality Breakdown</p>
+                <img class="materialboxed" width="650" src="assets\images\Ingenuity-Parts-Descriptions-2.jpg">
+              </div>
+              <div class="carousel-item amber white-text" href="j#twelve!" id="j#twelve!">
+                <h2 id="jheader#twelve!">Mars Pics and Info</h2>
+                <p id="jp#twelve!" class="white-text">Perserverance and Ingenuity Mission Details</p>
+                <img class="materialboxed" width="650" src="assets\images\Perserverance-Instrument-Breakdown.jpg">
+              </div>
+              <div class="carousel-item green white-text" href="j#thirteen!" id="j#thirteen!">
+                <h2 id="jheader#thirteen!">Mars Pics and Info</h2>
+                <p id="jp#thirteen!" class="white-text">Perserverance and Ingenuity Mission Details</p>
+                <img class="materialboxed" width="650" src="assets\images\Perserverance-Helicopter.jpg">
+              </div>
+              <div class="carousel-item blue white-text" href="j#fourteen!" id="j#fourteen!">
+                <h2 id="jheader#fourteen!">Mars Pics and Info</h2>
+                <p id="jp#fourteen!" class="white-text">Olympus Mons view from space. Olympus Mons is the biggest volcano in
+                  our solar system, which has a height of 16 miles and is the size of the state of Arizona.</p>
+                <img class="materialboxed" width="650" src="assets\images\Olympus-Mons.jpg">
+              </div>
+              <div class="carousel-item purple white-text" href="j#fifteen!" id="j#fifteen!">
+                <h2 id="jheader#fifteen!">Mars Pics and Info</h2>
+                <p id="jp#fifteen!" class="white-text">Olympus Mon size comparison to Mt Everest and Mauna Loa</p>
+                <img class="materialboxed" width="650" src="assets\images\Olympus-Mons-Comparison.jpg">
+              </div>
+              <div class="carousel-item white black-text" href="j#sixteen!" id="j#sixteen!">
+                <h2 id="jheader#sixteen!">Mars Pics and Info</h2>
+                <p id="jp#sixteen!" class="black-text">American Standard Code for Information Interchange and Hexadecimals,
+                  or better known as a Hexadecimal Chart. (ASCII/HEX Chart)</p>
+                <img class="materialboxed" width="650" src="assets\images\ASCII - HEX Code - Hexidecimal Chart.png">
+              </div>
+            </div>
+          </div>
         </div>
-        <div class="modal-footer">
-          <a href="#!" class="modal-close waves-effect waves-green btn-flat">No Thanks!</a>
-        </div>
-      </div>  
 
-    </main>
+        <!-- Modal Structure -->
+        <div id="modal1" class="modal">
+          <div class="modal-content">
+            <h4>Keep Yourself Updated!</h4>
+            <p>Enter Your Email For Updates!</p>
+            <form id="email-form">
+              <label for="email">Email:</label>
+              <input type="text" id="email" name="email"><br><br>
+              <input type="submit" value="Submit">
+            </form>
+            <div class="modal-footer">
+              <a href="#!" class="modal-close waves-effect waves-green btn-flat">No Thanks!</a>
+            </div>
+          </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js" integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi" crossorigin="anonymous"></script>
-    <!-- Compiled and minified JavaScript for Materialize -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-    <script src="assets/js/script.js"></script>
-  </body>
+  </main>
+
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.6.0/dist/umd/popper.min.js"
+    integrity="sha384-KsvD1yqQ1/1+IA7gi3P0tyJcT3vR+NdBTt13hSJ2lnve8agRGXTTyNaBYmCR/Nwi"
+    crossorigin="anonymous"></script>
+  <!-- Compiled and minified JavaScript for Materialize -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="assets/js/script.js"></script>
+  <footer>Created by - Brian Moore / Claire Phillips / Thomas Lockwood / Jamie Rippee</footer>
+</body>
+
 </html>

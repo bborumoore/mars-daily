@@ -1,14 +1,24 @@
 .carousel {
+    height: 600px;
+}
+
+body {
+    background-color: #f8eede;
+    font-family: 'Space Grotesk', sans-serif;
+    width: 100%;
+    background-image: url("../images/Mars-At-Night.jpg");
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+footer {
+    color: white;
     height: 800px;
 }
 
 header {
     font-family: 'Orbitron', sans-serif;
-}
-
-body {
-    background-color: #f8eede;
-    font-family: 'Space Grotesk', sans-serif; 
 }
 
 #main-header { 
