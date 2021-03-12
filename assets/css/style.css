@@ -42,3 +42,8 @@ header h2 {
     padding: 0%;
 }
 
+.btn-large {
+    padding: inherit;
+    min-width: 90px;
+}
+
