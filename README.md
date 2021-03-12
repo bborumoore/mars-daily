@@ -31,7 +31,7 @@ This is a collaborative Project regarding Mars Daily Weather. The website will a
 - Click on "Sign-Up".
 - Enter your email address.
 - You are then greeted by your username/email
-- you can interact with the site in two ways.
+- You can interact with the site in two ways.
     1) You can drag your house from pic to pic so view all daily pictures of Mars, and additional pictures and information.
     2) You can use your arrow keys as "Left" and "Right" button to scroll through the pictures
 - In the "Random" section you can click on the pictures, with your mouse, to enlarge the pictures for a better view. When finished, simply click on the picture again to minimize the picture, to scroll to the next pic.  
